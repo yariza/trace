@@ -1,3 +1,4 @@
 [submodule "external/bgfx.cmake"]
 	path = external/bgfx.cmake
 	url = git@github.com:JoshuaBrookover/bgfx.cmake.git
+	ignore = dirty

@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.1)
+
+project( trace )
+
+set( COMPILE_FLAGS "-Wall -Wextra -Werror" )
+set( LINK_FLAGS    "" )
+
+set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
+set (CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${LINK_FLAGS}")
+
+# Add directory with macros
+set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake )
+
+# Add cmake file with useful functions
+include( Common )
+
+# tclap dependency
+include( tclap )
+
+# bgfx dependency
+add_subdirectory( ${PROJECT_SOURCE_DIR}/external/bgfx.cmake )
+include_directories( ${BGFX_DIR}/include ${BGFX_DIR}/3rdparty ${BGFX_DIR}/examples/common )
+
+message( STATUS ${BGFX_DIR} )
+
+append_files( Headers "h" src )
+append_files( Sources "cpp" src )
+
+include_directories( src )
+
+add_executable(bgfx_test ${Sources} )
+target_link_libraries(bgfx_test bgfx example-common )
