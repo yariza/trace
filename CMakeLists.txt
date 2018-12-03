@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 
 project( trace )
 
-set( COMPILE_FLAGS "-Wall -Wextra -Werror" )
+set( COMPILE_FLAGS "-Wall -Wextra -Werror -O3" )
 set( LINK_FLAGS    "" )
 
 set (CMAKE_CXX_STANDARD 14)
@@ -17,6 +17,7 @@ include( Common )
 
 # tclap dependency
 include( tclap )
+include_directories( ${TCLAP_INCLUDE_DIR} )
 
 # bgfx dependency
 add_subdirectory( ${PROJECT_SOURCE_DIR}/external/bgfx.cmake )
