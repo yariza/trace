@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 
 project( trace )
 
-set( COMPILE_FLAGS "-Wall -Wextra -Werror -O3" )
+set( COMPILE_FLAGS "-Wall -O2" )
 set( LINK_FLAGS    "" )
 
 set (CMAKE_CXX_STANDARD 14)
