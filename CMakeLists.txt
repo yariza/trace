@@ -16,8 +16,14 @@ set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake )
 include( Common )
 
 # tclap dependency
-include( tclap )
-include_directories( ${TCLAP_INCLUDE_DIR} )
+find_package( TCLAP REQUIRED )
+include_directories( ${TCLAP_INCLUDE_PATH} )
+
+find_package( GLM REQUIRED )
+include_directories( ${GLM_INCLUDE_DIRS} )
+
+find_package (RapidXML REQUIRED)
+include_directories( ${RAPIDXML_INCLUDE_DIR} )
 
 # bgfx dependency
 add_subdirectory( ${PROJECT_SOURCE_DIR}/external/bgfx.cmake )
