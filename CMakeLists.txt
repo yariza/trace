@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 
 project( trace )
 
-set( COMPILE_FLAGS "-Wall -O2" )
+set( COMPILE_FLAGS "-Wall -O2 -msse2" )
 set( LINK_FLAGS    "" )
 
 set (CMAKE_CXX_STANDARD 14)
@@ -14,6 +14,9 @@ set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake )
 
 # Add cmake file with useful functions
 include( Common )
+
+# automatic build type generator that provides sane defaults
+include( BuildType )
 
 # tclap dependency
 find_package( TCLAP REQUIRED )
