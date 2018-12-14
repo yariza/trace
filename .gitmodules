@@ -2,3 +2,6 @@
 	path = external/bgfx.cmake
 	url = git@github.com:JoshuaBrookover/bgfx.cmake.git
 	ignore = dirty
+[submodule "include/stb"]
+	path = include/stb
+	url = git@github.com:nothings/stb.git
