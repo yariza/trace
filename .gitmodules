@@ -5,3 +5,6 @@
 [submodule "include/stb"]
 	path = include/stb
 	url = git@github.com:nothings/stb.git
+[submodule "include/linalg"]
+	path = include/linalg
+	url = git@github.com:sgorsten/linalg.git
