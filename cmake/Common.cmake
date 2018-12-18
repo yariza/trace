@@ -7,7 +7,7 @@ endif ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 # finds all files with a given extension
 macro (append_files files ext)
   foreach (dir ${ARGN})
-    file (GLOB _files "${CMAKE_CURRENT_LIST_DIR}/${dir}/*.${ext}")
+    file (GLOB_RECURSE _files "${CMAKE_CURRENT_LIST_DIR}/${dir}/*.${ext}")
     list (APPEND ${files} ${_files})
   endforeach (dir)
 endmacro (append_files)
